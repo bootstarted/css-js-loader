@@ -121,13 +121,13 @@ module.exports = function(content) {
     // };
     // ```
     return format(config, [
-      styles.default,
       mapKeys(
         omit(styles, 'default'),
         function (value, key) {
           return '.' + key;
         }
       ),
+      styles.default,
     ]);
   }
 
