@@ -1,0 +1,17 @@
+{
+  "name": "css-js-loader",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Neal Granger <neal@metalab.co>",
+  "license": "CC0-1.0",
+  "dependencies": {
+    "fbjs": "^0.8.4",
+    "loader-utils": "^0.2.15",
+    "lodash": "^4.15.0",
+    "react": "^15.3.1"
+  }
+}
