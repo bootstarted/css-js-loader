@@ -5,7 +5,7 @@ var omit = require('lodash/omit');
 var isString = require('lodash/isString');
 var isNumber = require('lodash/isNumber');
 var loaderUtils = require('loader-utils');
-var dangerousStyleValue = require('react/lib/dangerousStyleValue');
+var dangerousStyleValue = require('react-dom/lib/dangerousStyleValue');
 var hyphenateStyleName = require('fbjs/lib/hyphenateStyleName');
 
 function indent(pretty, depth) {

@@ -9,9 +9,9 @@
   "author": "Neal Granger <neal@metalab.co>",
   "license": "CC0-1.0",
   "dependencies": {
-    "fbjs": "^0.8.4",
-    "loader-utils": "^0.2.15",
-    "lodash": "^4.15.0",
-    "react": "^15.3.1"
+    "fbjs": "^0.8.8",
+    "loader-utils": "^0.2.16",
+    "lodash": "^4.17.4",
+    "react-dom": "^15.4.2"
   }
 }
