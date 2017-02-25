@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run lint",
+    "lint": "eslint ."
   },
   "author": "Neal Granger <neal@metalab.co>",
   "license": "CC0-1.0",
@@ -13,5 +14,14 @@
     "loader-utils": "^0.2.16",
     "lodash": "^4.17.4",
     "react-dom": "^15.4.2"
+  },
+  "devDependencies": {
+    "eslint": "^2.10.2",
+    "eslint-config-metalab": "^4.0.1",
+    "eslint-import-resolver-babel-module": "^2.0.1",
+    "eslint-plugin-filenames": "^0.2.0",
+    "eslint-plugin-import": "^1.15.0",
+    "eslint-plugin-lodash-fp": "^1.2.0",
+    "eslint-plugin-react": "^5.1.1"
   }
 }
