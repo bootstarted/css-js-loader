@@ -89,7 +89,7 @@ function format(config, value, name, level, inProp) {
 }
 
 module.exports = function(content) {
-  this.cacheable();
+  this.cacheable && this.cacheable();
 
   config = defaults(
     loaderUtils.getLoaderConfig(this, 'jsCssLoader'),
