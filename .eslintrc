@@ -3,6 +3,7 @@
     "metalab/legacy",
     "metalab/node"
   ],
+  "parser": "babel-eslint",
   "rules": {
     "func-style": 0,
     "no-extra-semi": 0,
