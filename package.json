@@ -4,28 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npm run lint && npm run spec",
-    "lint": "eslint .",
-    "spec": "NODE_ENV=test ./node_modules/.bin/_mocha -r adana-dump --compilers js:babel-core/register -R spec --recursive test/*.spec.js"
+    "test": "npm run lint && jest",
+    "lint": "eslint ."
   },
   "author": "Neal Granger <neal@metalab.co>",
   "license": "CC0-1.0",
   "dependencies": {
-    "adana-cli": "^0.1.2",
-    "adana-dump": "^0.1.0",
     "babel-core": "^6.24.0",
-    "babel-loader": "^6.2.7",
     "babel-preset-metalab": "^0.2.1",
-    "chai": "^3.5.0",
-    "css-loader": "^0.27.3",
     "fbjs": "^0.8.8",
+    "jest": "^19.0.2",
     "loader-utils": "^0.2.16",
     "lodash": "^4.17.4",
-    "memory-fs": "^0.4.1",
-    "mocha": "^3.2.0",
-    "react-dom": "^15.4.2",
-    "style-loader": "^0.14.0",
-    "webpack": "^1.13.0"
+    "react-dom": "^15.4.2"
   },
   "devDependencies": {
     "eslint": "^3.17.1",
