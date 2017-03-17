@@ -23,6 +23,10 @@ jest.mock('loader-utils', () => {
 
 describe('format works with ', () => {
   it('a javascript style', () => {
+    expect(global.cssJsLoader(style)).toMatchSnapshot();
+  });
+
+  it('an array of javascript styles', () => {
     expect(global.cssJsLoader([style])).toMatchSnapshot();
   });
 

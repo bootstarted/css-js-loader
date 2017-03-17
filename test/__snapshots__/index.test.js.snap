@@ -9,6 +9,15 @@ padding: 18px;
 "
 `;
 
+exports[`format works with  an array of javascript styles 1`] = `
+"color: #eee;
+font-weight: thin;
+font-size: 24px;
+text-align: center;
+padding: 18px;
+"
+`;
+
 exports[`format works with  es6 objects 1`] = `
 ".TITLE {
   color: #eee;
