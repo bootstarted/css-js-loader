@@ -18,6 +18,9 @@ const config = {
   },
   module: {
     loaders: [{
+      test: /\.css(\.js)?$/,
+      loaders: ['style-loader', 'css-loader'],
+    }, {
       test: /\.css\.js$/,
       loader: 'css-js-loader',
     }, {
@@ -27,43 +30,21 @@ const config = {
   },
 };
 
-const compile = () => {
+const webpack = () => {
   return new Promise((resolve) => {
     _webpack(config, (err, stats) => {
-      // console.log(err); // eslint-disable-line no-console
       expect(err).to.be.null;
       resolve(stats);
     });
   });
-  // const compiler = _webpack(config);
-
-  // compiler.outputFileSystem = new MemoryFileSystem();
-  // return new Promise((resolve) => {
-  //   compiler.run((err, _stats) => {
-  //     expect(err).to.be.null;
-  //     const stats = _stats.toJson();
-  //     const files = {};
-  //     stats.assets.forEach((asset) => {
-  //       files[asset.name] = compiler.outputFileSystem.readFileSync(
-  //         path.join(config.output.path, asset.name)
-  //       );
-  //     });
-  //     console.log(stats); // eslint-disable-line no-console
-  //     resolve((stats, files));
-  //   });
-  // });
 };
 
 describe('css-js-loader test', function() {
   it('should split files when needed', () =>
-    compile().then((stats) => {
-      console.log(stats.compilation); // eslint-disable-line no-console
+    webpack().then((stats) => {
       if (stats.hasErrors()) {
-        console.log(stats.compilation.errors[0]); // eslint-disable-line no-console
-        // done(stats.compilation.errors[0]);
         return;
       }
-      // console.log('got here at least', stats.stats.compilation); // eslint-disable-line no-console
     })
   );
   it('should check that this test file is run', function() {

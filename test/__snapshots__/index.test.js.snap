@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`format works with  a javascript style 1`] = `
+"color: #eee;
+font-weight: thin;
+font-size: 24px;
+text-align: center;
+padding: 18px;
+"
+`;
+
+exports[`format works with  es6 objects 1`] = `
+".TITLE {
+  color: #eee;
+  font-weight: thin;
+  font-size: 24px;
+  text-align: center;
+  padding: 18px;
+}
+
+"
+`;
+
+exports[`format works with  stringified class names 1`] = `
+".blueText {
+  color: #eee;
+  font-weight: thin;
+  font-size: 24px;
+  text-align: center;
+  padding: 18px;
+}
+
+"
+`;
