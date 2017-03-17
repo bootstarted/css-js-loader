@@ -21,20 +21,20 @@ jest.mock('loader-utils', () => {
   };
 });
 
-describe('css-js-loader tests', () => {
-  it('blank styles is not modified', () => {
+describe('css-js-loader:', () => {
+  it('Blank style is not modified', () => {
     expect(global.cssJsLoader({})).toMatchSnapshot();
   });
 
-  it('basic javascript style', () => {
+  it('Basic javascript style is converted', () => {
     expect(global.cssJsLoader(style)).toMatchSnapshot();
   });
 
-  it('an array of javascript styles', () => {
+  it('An array of javascript styles are converted', () => {
     expect(global.cssJsLoader([style])).toMatchSnapshot();
   });
 
-  it('es6 style objects', () => {
+  it('es6 style objects are converted', () => {
     const sampleObject = {TITLE: style};
     // Make the object pass the es6 check
     Object.defineProperty(sampleObject, '__esModule', {
@@ -43,14 +43,14 @@ describe('css-js-loader tests', () => {
     expect(global.cssJsLoader(sampleObject)).toMatchSnapshot();
   });
 
-  it('stringified class names', () => {
+  it('Stringified class names are converted', () => {
     const stringedClassName = {
       '.blueText': style,
     };
     expect(global.cssJsLoader(stringedClassName)).toMatchSnapshot();
   });
 
-  it('style url attributes are maintained', () => {
+  it('Style url attributes are maintained', () => {
     const styleWithUrl = {
       'background-image': "url('http://example.com/bg.jpg')",
       ...style,
