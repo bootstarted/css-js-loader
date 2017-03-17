@@ -21,8 +21,12 @@ jest.mock('loader-utils', () => {
   };
 });
 
-describe('format works with ', () => {
-  it('a javascript style', () => {
+describe('css-js-loader tests', () => {
+  it('blank styles is not modified', () => {
+    expect(global.cssJsLoader({})).toMatchSnapshot();
+  });
+
+  it('basic javascript style', () => {
     expect(global.cssJsLoader(style)).toMatchSnapshot();
   });
 
@@ -30,7 +34,7 @@ describe('format works with ', () => {
     expect(global.cssJsLoader([style])).toMatchSnapshot();
   });
 
-  it('es6 objects', () => {
+  it('es6 style objects', () => {
     const sampleObject = {TITLE: style};
     // Make the object pass the es6 check
     Object.defineProperty(sampleObject, '__esModule', {
@@ -44,5 +48,13 @@ describe('format works with ', () => {
       '.blueText': style,
     };
     expect(global.cssJsLoader(stringedClassName)).toMatchSnapshot();
+  });
+
+  it('style url attributes are maintained', () => {
+    const styleWithUrl = {
+      'background-image': "url('http://example.com/bg.jpg')",
+      ...style,
+    };
+    expect(global.cssJsLoader(styleWithUrl)).toMatchSnapshot();
   });
 });

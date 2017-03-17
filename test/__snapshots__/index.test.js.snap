@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`format works with  a javascript style 1`] = `
+exports[`css-js-loader tests an array of javascript styles 1`] = `
 "color: #eee;
 font-weight: thin;
 font-size: 24px;
@@ -9,7 +9,7 @@ padding: 18px;
 "
 `;
 
-exports[`format works with  an array of javascript styles 1`] = `
+exports[`css-js-loader tests basic javascript style 1`] = `
 "color: #eee;
 font-weight: thin;
 font-size: 24px;
@@ -18,7 +18,9 @@ padding: 18px;
 "
 `;
 
-exports[`format works with  es6 objects 1`] = `
+exports[`css-js-loader tests blank styles is not modified 1`] = `""`;
+
+exports[`css-js-loader tests es6 style objects 1`] = `
 ".TITLE {
   color: #eee;
   font-weight: thin;
@@ -30,7 +32,7 @@ exports[`format works with  es6 objects 1`] = `
 "
 `;
 
-exports[`format works with  stringified class names 1`] = `
+exports[`css-js-loader tests stringified class names 1`] = `
 ".blueText {
   color: #eee;
   font-weight: thin;
@@ -39,5 +41,15 @@ exports[`format works with  stringified class names 1`] = `
   padding: 18px;
 }
 
+"
+`;
+
+exports[`css-js-loader tests style url attributes are maintained 1`] = `
+"background-image: url('http://example.com/bg.jpg');
+color: #eee;
+font-weight: thin;
+font-size: 24px;
+text-align: center;
+padding: 18px;
 "
 `;
