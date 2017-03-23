@@ -3,6 +3,9 @@
     "metalab/legacy",
     "metalab/node"
   ],
+  "plugins": [
+    "babel"
+  ],
   "parser": "babel-eslint",
   "rules": {
     "func-style": 0,
