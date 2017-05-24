@@ -91,7 +91,7 @@ function format(config, value, name, level, inProp) {
 module.exports = function(content) {
   this.cacheable();
 
-  config = defaults(
+  var config = defaults(
     loaderUtils.getLoaderConfig(this, 'jsCssLoader'),
     {pretty: process.env.NODE_ENV !== 'production'}
   );

@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`css-js-loader: An array of javascript styles are converted 1`] = `
+"color: #eee;
+font-weight: thin;
+font-size: 24px;
+text-align: center;
+padding: 18px;
+"
+`;
+
+exports[`css-js-loader: Basic javascript style is converted 1`] = `
+"color: #eee;
+font-weight: thin;
+font-size: 24px;
+text-align: center;
+padding: 18px;
+"
+`;
+
+exports[`css-js-loader: Blank style is not modified 1`] = `""`;
+
+exports[`css-js-loader: Stringified class names are converted 1`] = `
+".blueText {
+  color: #eee;
+  font-weight: thin;
+  font-size: 24px;
+  text-align: center;
+  padding: 18px;
+}
+
+"
+`;
+
+exports[`css-js-loader: Style url attributes are maintained 1`] = `
+"background-image: url('http://example.com/bg.jpg');
+color: #eee;
+font-weight: thin;
+font-size: 24px;
+text-align: center;
+padding: 18px;
+"
+`;
+
+exports[`css-js-loader: es6 style objects are converted 1`] = `
+".TITLE {
+  color: #eee;
+  font-weight: thin;
+  font-size: 24px;
+  text-align: center;
+  padding: 18px;
+}
+
+"
+`;
