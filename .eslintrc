@@ -1,17 +1,8 @@
-{
-  "extends": [
-    "metalab/legacy",
-    "metalab/node"
-  ],
-  "rules": {
-    "func-style": 0,
-    "no-extra-semi": 0,
-    "no-param-reassign": 0,
-    "vars-on-top": 0,
-    "max-len": 0,
-    "import/no-commonjs": 0,
-    "no-undef": 0,
-    "no-unused-vars": 0,
-    "space-before-function-paren": 0
-  }
-}
+extends:
+  - metalab/legacy
+env:
+  node: true
+rules:
+  vars-on-top: 0
+  no-param-reassign: 0
+  
