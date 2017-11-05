@@ -5,16 +5,16 @@ var omit = require('lodash/omit');
 var isString = require('lodash/isString');
 var isNumber = require('lodash/isNumber');
 var loaderUtils = require('loader-utils');
-var dangerousStyleValue = require('react-dom/lib/dangerousStyleValue');
+var dangerousStyleValue = require('./internal/dangerousStyleValue');
 var hyphenateStyleName = require('fbjs/lib/hyphenateStyleName');
 
 function indent(pretty, depth) {
   return pretty ? Array(depth).join('  ') : '';
-};
+}
 
 function space(pretty) {
   return pretty ? ' ' : '';
-};
+}
 
 function line(pretty) {
   return pretty ? '\n' : '';
@@ -44,7 +44,9 @@ function format(config, value, name, level, inProp) {
     // The `name` and `value` args currently represent a css property and value.
     // Use React's css style processing funcs to generate css markup.
 
-    css += indent(pretty, indentLevel) + hyphenateStyleName(name) + ':' + space(pretty);
+    css += indent(pretty, indentLevel) +
+      hyphenateStyleName(name) + ':' +
+      space(pretty);
     css += dangerousStyleValue(name, value) + ';' + line(pretty);
   } else {
     // The `name` and `value` args currently represent a block containing css
@@ -54,7 +56,8 @@ function format(config, value, name, level, inProp) {
     if (name) {
       // Unless we are in the global css scope (`name` is undefined), add a new
       // block to the markup.
-      css += indent(pretty, indentLevel) + name + space(pretty) + '{' + line(pretty);
+      css += indent(pretty, indentLevel) + name + space(pretty) + '{' +
+        line(pretty);
       indentLevel += 1;
     }
 
@@ -91,14 +94,13 @@ function format(config, value, name, level, inProp) {
 module.exports = function(content) {
   this.cacheable();
 
-  config = defaults(
-    loaderUtils.getLoaderConfig(this, 'jsCssLoader'),
+  var config = defaults(
+    loaderUtils.getOptions(this),
     {pretty: process.env.NODE_ENV !== 'production'}
   );
 
-  var styles = this.exec(content, this.resourcePath);
-
-  var css = '';
+  var styles = typeof content === 'object' ? content :
+    this.exec(content, this.resourcePath);
 
   if (styles.__esModule) {
     // When using Babel, css classes can be defined as named es6 exports.
@@ -123,7 +125,7 @@ module.exports = function(content) {
     return format(config, [
       mapKeys(
         omit(styles, 'default'),
-        function (value, key) {
+        function(value, key) {
           return '.' + key;
         }
       ),

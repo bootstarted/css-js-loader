@@ -13,7 +13,7 @@ Write your styles with in JavsScript.
 Install:
 
 ```sh
-yarn add css-js-loader
+npm install css-js-loader value-loader
 ```
 
 Add to your `webpack.config.js`:
@@ -27,15 +27,17 @@ module.exports = {
       loaders: ['style-loader', 'css-loader'],
     }, {
       test: /\.css\.js$/,
-      loader: 'css-js-loader',
+      loaders: ['css-js-loader', 'value-loader'],
     }],
   },
 };
 ```
 
+NOTE: You don't need to chain with [value-loader] per-se, but doing so gives you caching, nested dependency monitoring/reloading and the ability to use webpack's tree-shaking abilities.
+
 ## Writing JS Styles
 
-`css-js-loader` converts JS modules to CSS markup at runtime. 
+`css-js-loader` converts JS modules to CSS markup at runtime.
 
 A `.css.js` file:
 
@@ -104,3 +106,4 @@ export default () =>
 ```
 
 [CSS Modules]: https://github.com/webpack-contrib/css-loader#css-modules
+[value-loader]: https://www.npmjs.com/package/value-loader

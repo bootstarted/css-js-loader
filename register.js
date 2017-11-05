@@ -1,3 +1,4 @@
+/* global __WRAPPED__ __CONTEXT__ __IDENT_NAME__ */
 var Module = require('module');
 
 function register(context, localIdentName) {
